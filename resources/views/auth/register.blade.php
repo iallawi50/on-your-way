@@ -25,6 +25,11 @@
             @error('email')
             <span class="text-red-500 text-right" dir="ltr"> @tvtc.edu.sa يرجى التحقق من البريد و انه متبوع بـ </span>
             @enderror
+            @error('email')
+            <div>
+                <span class="text-red-500 text-right" dir="ltr"> {{ $message }}</span>
+            </div>
+            @enderror
 
             <div class="mt-4">
                 <x-label for="mobile" class="text-right" value="{{ __('رقم الجوال') }}" />

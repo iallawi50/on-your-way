@@ -14,8 +14,8 @@ class InviteNotification extends Component
     public function mount()
     {
         if (auth()->user() == null) return redirect('/login');
-        $this->orders = Orderlog::latest()->whereDate('created_at', Carbon::today())->where('order_user_id', $this->user_id)->get();
-        $this->count = count($this->orders);
+        // $this->orders = Orderlog::latest()->whereDate('created_at', Carbon::today())->where('order_user_id', $this->user_id)->where('status', 0)->get();
+        // $this->count = count($this->orders);np
     }
     public function render()
     {

@@ -43,8 +43,8 @@ Route::resource('orders', OrderController::class);
 Route::post('order/invite/{id}', [OrderlogController::class, 'store']);
 Route::get('/invites', function () {
     // if (auth()->user() == null) return redirect('/login');
-    // $orders = Orderlog::latest()->whereDate('created_at', Carbon::today())->where('order_user_id', auth()->user()->id)->get();
-    $orders = auth()->user()->orderlogs;
+    $orders = Orderlog::latest()->whereDate('created_at', Carbon::today())->where('order_user_id', auth()->user()->id)->get();
+    // $orders = auth()->user()->orderlogs->whereDate('created_at', Carbon::today());
     return view('orders.invites', compact('orders'));
 })->name('invites');
 
